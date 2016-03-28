@@ -29,15 +29,14 @@ public class Bonus01 {
 			return "D-";
 		} else if ((grade < 60) && (grade >= 0)) {
 			return "F";
-		}
-		else {
+		} else {
 			Scanner input = new Scanner(System.in);
 			int newGrade;
 			do {
-			
+
 				System.out.print("Invalid entry. Please enter another value: ");
 				newGrade = input.nextInt();
-			
+
 			} while (grade < 0);
 			input.close();
 			return gradeCalc(newGrade);
@@ -46,22 +45,28 @@ public class Bonus01 {
 	}
 
 	public static void main(String[] args) {
-		
+
 		Scanner grade = new Scanner(System.in);
 		Scanner answer = new Scanner(System.in);
 		String newAnswer;
 
 		System.out.println("Welcome to the Letter Grade Converter");
-		
-		
+
 		do {
 			System.out.print("\nEnter a numerical grade: ");
+			while (!grade.hasNextInt()) {
+				System.out.print("Invalid number. Must be of type int. Please try again: ");
+				grade.nextLine();
+			}
+
 			int newGrade = grade.nextInt();
 			System.out.println("Letter Grade: " + gradeCalc(newGrade));
 			System.out.print("\n" + "Continue? (y/n): ");
 			newAnswer = answer.next();
 
 		} while (newAnswer.equalsIgnoreCase("Y"));
+
+		System.out.println("Thank you for using this program!");
 		grade.close();
 		answer.close();
 
