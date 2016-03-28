@@ -8,7 +8,8 @@ public class Bonus01 {
 	 * grade. program also contains a do-while loop that prompts the user to
 	 * continue if they type the letter "Y" when prompted.
 	 *
-	 * copies grading rubric from the following source: http://www.colostate.edu/Dept/EdLicense/StudentTeaching/grade_scale.pdf
+	 * copies grading rubric from the following source:
+	 * http://www.colostate.edu/Dept/EdLicense/StudentTeaching/grade_scale.pdf
 	 * 
 	 * 
 	 * 
@@ -40,6 +41,8 @@ public class Bonus01 {
 			return "C+";
 		} else if ((grade < 77) && (grade >= 73)) {
 			return "C";
+		} else if ((grade < 73) && (grade >= 70)) {
+			return "C-";
 		} else if ((grade < 70) && (grade >= 67)) {
 			return "D+";
 		} else if ((grade < 67) && (grade >= 63)) {
